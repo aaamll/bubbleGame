@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Game using javaScript</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(232, 239, 88);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#panel {
+    width: 90%; /* Adjusted for better responsiveness */
+    height: 90%; /* Adjusted for better responsiveness */
+    max-width: 500px; /* Added to limit maximum width on larger screens */
+    max-height: 600px; /* Added to limit maximum height on larger screens */
+    border-radius: 3%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#top {
+    width: 100%;
+    height: 19%; /* Adjusted for better responsiveness */
+    background-color: rgb(174, 174, 23);
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding: 0px 5%; /* Adjusted for better responsiveness */
+    justify-content: space-around;
+}
+
+.box {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: black;
+    font-weight: 700;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#pbtm {
+    width: 100%;
+    height: 86%; /* Adjusted for better responsiveness */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Adjusted to center align bubbles */
+}
+
+.bubble {
+    cursor: pointer;
+    margin: 5px;
+    width: 10%; /* Adjusted for better responsiveness */
+    max-width: 60px; /* Added to limit maximum width of bubbles */
+    aspect-ratio: 1; /* Maintain aspect ratio for bubbles */
+    background-color: yellow;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.bubble:hover {
+    background-color: rgb(174, 174, 23);
+}
+
+#themeChange {
+    position: absolute; /* Changed position to absolute */
+    top: 15px; /* Adjusted positioning */
+    right: 20px; /* Adjusted positioning */
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.5em; /* Adjusted font size */
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+}
+#userNameDisplay{
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #panel {
+        width: 90%; 
+    }
+
+    #top {
+        flex-direction: column;
+        height: auto; 
+    }
+
+    .elem {
+        margin-bottom: 10px;
+    }
+
+    #pbtm {
+        height: auto; 
+        padding: 5px;
+    }
+
+    .bubble {
+        width: 20%; 
+        max-width: 40px; 
+        aspect-ratio: 1; 
+        font-size: 20px; 
+    }
+
+    #themeChange {
+        font-size: 1em; 
+        top: 10px;
+    }
+    #hit{
+        margin-top: 20px;
+    }
+   
+}
+
+    </style>
+</head>
+<body>
+   
+    <div id="main">
+        <button id="themeChange">
+            Change Theme
+       </button>
+       <div id="panel">
+           <div id="top">
+               <div class="elem" id="hit">
+                   <h4 >Hit</h4>
+                   <div class="box" id="hitval">5</div>
+               </div>
+               <div class="elem">
+                   <h4>Timer</h4>
+                   <div class="box" id="timeval">60</div>
+               </div>
+               <div class="elem">
+                   <h4>Score</h4>
+                   <div class="box" id="scoreval">0</div>
+                </div>
+           </div><!--end top-->
+           <div id="pbtm">
+           </div>
+       </div>
+    </div>
+    <script src="script.js"></script>
+  
+</body>
+</html>

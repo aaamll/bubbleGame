@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(232, 239, 88);
+        }
+        .mainScreen{
+            position: relative;
+            top: 200px;
+        
+        }
+        button{
+            padding: 15px;
+            border-radius: 20px;
+            background-color: #dadada;
+            color: black;
+        }
+        /* button:hover{
+            background-color: black;
+            border: 5px solid red;
+        }
+        button a:hover{
+            font-family: monospace;
+            color: white;
+        } */
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+        }
+        li{
+            font-size: 20px;
+        }
+        h1{
+            font-size: 53px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #userNameInput{
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bolder;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        #userNameDisplay{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+   <center> 
+        <div id="userNameDisplay"></div>
+        <input type="text" id="userNameInput" placeholder="Enter your name"><br>
+        <button onclick="saveUserName()">Save</button>
+    <div class="mainScreen">
+    <hr>
+        <h1>Bubble Game</h1>
+        <h2>Instructions:</h2>
+        <p><li>You have to click the bubble with same number as shown in Hit  & you have 60min to do this</li>
+        </p><br>
+        <button><a href="bubble.html">Click here to start</a></button>
+    </div>
+</center><hr>
+<script>
+
+// Function to save user name to local storage
+function saveUserName() {
+    var userName = document.getElementById("userNameInput").value;
+    localStorage.setItem("userName", userName);
+    displayUserName();
+}
+
+// Function to display user name on the UI
+function displayUserName() {
+    var userName = localStorage.getItem("userName");
+    var userNameDisplay = document.getElementById("userNameDisplay");
+    if (userName) {
+        userNameDisplay.textContent = "Welcome, " + userName + "!";
+    } else {
+        userNameDisplay.textContent = "Welcome!";
+    }
+}
+
+// Call displayUserName() when the page loads to display any existing user name
+displayUserName();
+
+
+
+</script>
+</body>
+</html>
